@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './style.css'
 import Chips from './Chips';
 import SearchInput from './SearchInput';
+import Weather from './Weather';
 
 import regions from '../data/regions.json'
 import departments from '../data/departments.json'
@@ -29,6 +30,7 @@ function Nav({ locationTo, locationFrom, onLocationToChange, onLocationFromChang
 
       <Chips location={locationTo}/>
       <SearchInput id="destination" locations={locations} location={locationTo} onChange={handleLocationTo}/>
+      <Weather location={locationTo}/>
 
 
       <Chips location={locationFrom}/>
