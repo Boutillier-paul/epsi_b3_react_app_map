@@ -35,6 +35,7 @@ function Nav({ locationTo, locationFrom, onLocationToChange, onLocationFromChang
 
       <Chips location={locationFrom}/>
       <SearchInput id="départ" locations={locations} location={locationFrom} onChange={handleLocationFrom}/>
+      <Weather location={locationFrom}/>
     </div>
   );
 }

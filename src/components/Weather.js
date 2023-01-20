@@ -33,6 +33,8 @@ function Weather({ location }) {
     // https://openweathermap.org/api/one-call-3
     // https://openweathermap.org/weather-conditions
 
+    // lorsque la route est tracée, si on retire les destinations et départs, la route persiste mais les Marker disparraissent
+
     return (
         <div className='Weather'>
             { weatherData &&
