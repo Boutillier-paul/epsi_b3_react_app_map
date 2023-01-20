@@ -1,0 +1,29 @@
+@import url("~leaflet/dist/leaflet.css");
+
+.leaflet-container {
+  width: 80vw;
+  height: 100vh;
+  position: relative;
+}
+
+.Nav {
+    height: 100%;
+    width: 20%;
+    position: relative;
+    background-color: white;
+    box-shadow: -.1px -.1px 10px 0px rgba(0, 0, 0, .4);
+    z-index: 1001;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ChipList {
+    margin: 10px 10px;
+    width: 80%;
+}
+
+.SearchInput {
+    width: 80%;
+}

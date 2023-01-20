@@ -1,0 +1,116 @@
+[
+    {
+        "id": "1",
+        "code": "01",
+        "label": "Guadeloupe",
+        "slug": "guadeloupe"
+    },
+    {
+        "id": "2",
+        "code": "02",
+        "label": "Martinique",
+        "slug": "martinique"
+    },
+    {
+        "id": "3",
+        "code": "03",
+        "label": "Guyane",
+        "slug": "guyane"
+    },
+    {
+        "id": "4",
+        "code": "04",
+        "label": "La Réunion",
+        "slug": "la reunion"
+    },
+    {
+        "id": "5",
+        "code": "06",
+        "label": "Mayotte",
+        "slug": "mayotte"
+    },
+    {
+        "id": "6",
+        "code": "11",
+        "label": "Île-de-France",
+        "slug": "ile de france"
+    },
+    {
+        "id": "7",
+        "code": "24",
+        "label": "Centre-Val de Loire",
+        "slug": "centre val de loire"
+    },
+    {
+        "id": "8",
+        "code": "27",
+        "label": "Bourgogne-Franche-Comté",
+        "slug": "bourgogne franche comte"
+    },
+    {
+        "id": "9",
+        "code": "28",
+        "label": "Normandie",
+        "slug": "normandie"
+    },
+    {
+        "id": "10",
+        "code": "32",
+        "label": "Hauts-de-France",
+        "slug": "hauts de france"
+    },
+    {
+        "id": "11",
+        "code": "44",
+        "label": "Grand Est",
+        "slug": "grand est"
+    },
+    {
+        "id": "12",
+        "code": "52",
+        "label": "Pays de la Loire",
+        "slug": "pays de la loire"
+    },
+    {
+        "id": "13",
+        "code": "53",
+        "label": "Bretagne",
+        "slug": "bretagne"
+    },
+    {
+        "id": "14",
+        "code": "75",
+        "label": "Nouvelle-Aquitaine",
+        "slug": "nouvelle aquitaine"
+    },
+    {
+        "id": "15",
+        "code": "76",
+        "label": "Occitanie",
+        "slug": "occitanie"
+    },
+    {
+        "id": "16",
+        "code": "84",
+        "label": "Auvergne-Rhône-Alpes",
+        "slug": "auvergne rhone alpes"
+    },
+    {
+        "id": "17",
+        "code": "93",
+        "label": "Provence-Alpes-Côte d'Azur",
+        "slug": "provence alpes cote dazur"
+    },
+    {
+        "id": "18",
+        "code": "94",
+        "label": "Corse",
+        "slug": "corse"
+    },
+    {
+        "id": "19",
+        "code": "COM",
+        "label": "Collectivités d'Outre-Mer",
+        "slug": "collectivites doutre mer"
+    }
+]
