@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { TextField, Autocomplete } from '@mui/material';
 
 
-function SearchInput(props) {
-  const { id, locations, location = { region: null, department: null, city: null }, onChange } = props;
-
+function SearchInput({ id, locations, location = { region: null, department: null, city: null }, onChange }) {
   const handleChange = (event, value) => {
     if (!location.region || Object.keys(location.region).length === 0) {
       onChange({...location, region: value});

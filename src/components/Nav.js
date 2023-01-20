@@ -8,13 +8,12 @@ import departments from '../data/departments.json'
 import cities from '../data/cities.json'
 
 
-function Nav(props) {
+function Nav({ locationTo, locationFrom, onLocationToChange, onLocationFromChange }) {
   const [locations] = useState({
     regions : JSON.parse(JSON.stringify(regions)),
     departments : JSON.parse(JSON.stringify(departments)),
     cities: JSON.parse(JSON.stringify(cities))
   })
-  const { locationTo, locationFrom, onLocationToChange, onLocationFromChange } = props
 
   const handleLocationTo = (newLocation) => {
     onLocationToChange(newLocation)
@@ -30,7 +29,7 @@ function Nav(props) {
 
       <Chips location={locationTo}/>
       <SearchInput id="destination" locations={locations} location={locationTo} onChange={handleLocationTo}/>
-      
+
 
       <Chips location={locationFrom}/>
       <SearchInput id="départ" locations={locations} location={locationFrom} onChange={handleLocationFrom}/>

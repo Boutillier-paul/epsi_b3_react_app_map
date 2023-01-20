@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
-import Map from './components/Map'
+import ItineraryMap from './components/Map'
 import Nav from './components/Nav'
 
 function App() {
@@ -12,7 +12,10 @@ function App() {
   // Quand il y a une "city" dans "location" :
   //  - ajouter "location" à l'historique de recherche
   //  - afficher la météo de la "location"
-  //  - Afficher la route lorsque les "location" sont set
+  
+
+  // TODO
+  // Faire en sorte que la carte se centre et zoom lorsqu'il y a une route
 
 
   const handleLocationToChange = (value) => {
@@ -23,14 +26,9 @@ function App() {
     setLocationFrom(value);
   }
 
-  useEffect(() => {
-    console.log(locationTo);
-    console.log(locationFrom);
-  }, [locationTo, locationFrom])
-
   return (
     <div className="App">
-      <Map to={locationTo} from={locationFrom}/>
+      <ItineraryMap locationTo={locationTo} locationFrom={locationFrom}/>
       <Nav locationTo={locationTo} onLocationToChange={handleLocationToChange} locationFrom={locationFrom} onLocationFromChange={handleLocationFromChange}/>
     </div>
   );
