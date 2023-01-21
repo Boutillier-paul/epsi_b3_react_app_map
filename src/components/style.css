@@ -26,4 +26,11 @@
 
 .SearchInput {
     width: 80%;
+    margin-bottom: 20px;
+}
+
+.Weather{
+    margin: 10px;
+    padding: 10px;
+    padding-bottom: 20px;
 }

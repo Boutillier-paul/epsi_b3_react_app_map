@@ -41,6 +41,7 @@ function Map({ locationTo, locationFrom }) {
                 setMapCenter(([fromCoord[0] + toCoord[0]]) /2, ([fromCoord[1] + toCoord[1]]) /2)
                 setZoom(14)
             } else {
+                setCoordinates(null)
                 setFrom(null)
                 setTo(null)
             }
@@ -54,7 +55,9 @@ function Map({ locationTo, locationFrom }) {
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <Polyline color="blue" positions={coordinates} />
+                {coordinates &&
+                    <Polyline color="blue" positions={coordinates} />
+                }
 
                 {from &&
                     <Marker position={from}>

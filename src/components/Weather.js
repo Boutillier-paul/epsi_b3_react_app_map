@@ -1,13 +1,12 @@
 import './style.css'
 
 import React, { useState, useEffect } from 'react';
-import { Grid, Item } from '@mui/material';
+import { Grid } from '@mui/material';
 
 const api_key = 'b664b142db6566b9fc9503906ed7a763';
 
 function Weather({ location }) {
     const [weatherData, setWeatherData] = useState(null);
-    const [cityName, setCityName] = useState(null);
   
     useEffect(() => {
         const getWeather = async (lat, lon) => {
@@ -16,15 +15,13 @@ function Weather({ location }) {
             );
             const data = await response.json();
             setWeatherData(data);
-            console.log(data);
         };
 
         if (location && location.city && Object.keys(location.city).length !== 0 && !weatherData) {
             getWeather(location.city.gps_lat, location.city.gps_lng);
-            setCityName(location.city.label);
         }
 
-        if (!location) {
+        if (!location || !location.city || Object.keys(location.city).length === 0) {
             setWeatherData(null);
         }
     })
@@ -36,14 +33,10 @@ function Weather({ location }) {
     // lorsque la route est tracée, si on retire les destinations et départs, la route persiste mais les Marker disparraissent
 
     return (
-        <div className='Weather'>
+        <div className='Weather' style={ weatherData && {boxShadow: '-.1px -.1px 10px 0px rgba(0, 0, 0, .4)', borderRadius: '5%'}}>
             { weatherData &&
                 <Grid container rowSpacing={3} columnSpacing={3}>
-                    <Grid item xs={12}>
-                        {cityName}
-                    </Grid>
-
-                    <Grid item xs={6}>
+                    <Grid item xs={6} sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                         {weatherData.main.temp}°C
                     </Grid>
 
@@ -52,11 +45,11 @@ function Weather({ location }) {
                     </Grid>
 
                     <Grid item xs={12}>
-                        {weatherData.weather[0].description}
+                        {weatherData.weather[0].description.replace(/^\w/, c => c.toUpperCase())}
                     </Grid>
 
                     <Grid item xs={12}>
-                        Ressenti {weatherData.main.feels_like}°C
+                        Ressenti: {weatherData.main.feels_like}°C
                     </Grid>
                 </Grid>
             }

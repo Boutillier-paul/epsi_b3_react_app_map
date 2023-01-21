@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import ItineraryMap from './components/Map'
 import Nav from './components/Nav'
 
