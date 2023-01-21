@@ -3,6 +3,8 @@ import './style.css'
 import Chips from './Chips';
 import SearchInput from './SearchInput';
 import Weather from './Weather';
+import History from './History';
+
 
 import regions from '../data/regions.json'
 import departments from '../data/departments.json'
@@ -36,6 +38,8 @@ function Nav({ locationTo, locationFrom, onLocationToChange, onLocationFromChang
       <Chips location={locationFrom}/>
       <SearchInput id="départ" locations={locations} location={locationFrom} onChange={handleLocationFrom}/>
       <Weather location={locationFrom}/>
+
+      <History />
     </div>
   );
 }

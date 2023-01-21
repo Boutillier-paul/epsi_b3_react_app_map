@@ -5,6 +5,11 @@ import { Grid } from '@mui/material';
 
 const api_key = 'b664b142db6566b9fc9503906ed7a763';
 
+// DOC API openWeather
+// https://openweathermap.org/api/one-call-3
+// https://openweathermap.org/weather-conditions
+
+
 function Weather({ location }) {
     const [weatherData, setWeatherData] = useState(null);
   
@@ -25,12 +30,6 @@ function Weather({ location }) {
             setWeatherData(null);
         }
     })
-
-    // DOC
-    // https://openweathermap.org/api/one-call-3
-    // https://openweathermap.org/weather-conditions
-
-    // lorsque la route est tracée, si on retire les destinations et départs, la route persiste mais les Marker disparraissent
 
     return (
         <div className='Weather' style={ weatherData && {boxShadow: '-.1px -.1px 10px 0px rgba(0, 0, 0, .4)', borderRadius: '5%'}}>

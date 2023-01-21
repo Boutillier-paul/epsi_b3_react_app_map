@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ItineraryMap from './components/Map'
 import Nav from './components/Nav'
 
@@ -7,16 +7,13 @@ function App() {
   const [locationTo, setLocationTo] = useState()
   const [locationFrom, setLocationFrom] = useState()
 
-
-  // Todo 
-  // Quand il y a une "city" dans "location" :
-  //  - ajouter "location" à l'historique de recherche
-  //  - afficher la météo de la "location"
-  
-
-  // TODO
-  // Faire en sorte que la carte se centre et zoom lorsqu'il y a une route
-
+  useEffect(() => {
+    if (locationTo && locationFrom && locationTo.city && locationFrom.city) {
+      let history = JSON.parse(localStorage.getItem('history')) || [];
+      history.push({ locationTo, locationFrom });
+      localStorage.setItem('history', JSON.stringify(history));
+    }
+  }, [locationTo, locationFrom, localStorage.getItem('history')]);
 
   const handleLocationToChange = (value) => {
     setLocationTo(value);
