@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TextField, Autocomplete } from '@mui/material';
 
 
 function SearchInput({ id, locations, location = { region: null, department: null, city: null }, onChange }) {
+  const [inputValue, setInputValue] = useState(null)
+
   const handleChange = (event, value) => {
     if (!location.region || Object.keys(location.region).length === 0) {
       onChange({...location, region: value});
@@ -11,7 +13,9 @@ function SearchInput({ id, locations, location = { region: null, department: nul
     } else if (!location.city || Object.keys(location.city).length === 0) {
       onChange({...location, city: value});
     }
-    if (event.target.closest("svg")) {onChange({region: null, department: null, city: null})}
+    if (event.target.closest("li") || event.target.closest("input")) {
+      setInputValue(null)
+    }
   };
 
 
@@ -28,6 +32,7 @@ function SearchInput({ id, locations, location = { region: null, department: nul
     <div className='SearchInput'>
         <Autocomplete
           id={id}
+          value={inputValue}
           freeSolo
           autoHighlight
           onChange={handleChange}

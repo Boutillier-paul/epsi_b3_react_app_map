@@ -10,7 +10,8 @@ function App() {
   useEffect(() => {
     if (locationTo && locationFrom && locationTo.city && locationFrom.city) {
       let history = JSON.parse(localStorage.getItem('history')) || [];
-      history.push({ locationTo, locationFrom });
+      let date = new Date().toLocaleString();
+      history.push({ date, locationTo, locationFrom });
       localStorage.setItem('history', JSON.stringify(history));
     }
   }, [locationTo, locationFrom, localStorage.getItem('history')]);
@@ -23,10 +24,22 @@ function App() {
     setLocationFrom(value);
   }
 
+  const handleClear = (location) => {
+    (location === locationTo) ? 
+    setLocationTo({ region: null, department: null, city: null }) : 
+    setLocationFrom({ region: null, department: null, city: null });
+  }
+
   return (
     <div className="App">
       <ItineraryMap locationTo={locationTo} locationFrom={locationFrom}/>
-      <Nav locationTo={locationTo} onLocationToChange={handleLocationToChange} locationFrom={locationFrom} onLocationFromChange={handleLocationFromChange}/>
+      <Nav 
+        locationTo={locationTo} 
+        onLocationToChange={handleLocationToChange} 
+        locationFrom={locationFrom} 
+        onLocationFromChange={handleLocationFromChange}
+        onClearClick={handleClear}
+      />
     </div>
   );
 }

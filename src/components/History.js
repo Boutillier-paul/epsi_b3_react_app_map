@@ -37,7 +37,7 @@ function History() {
                 <DialogTitle sx={{textAlign: 'center'}}>Historique</DialogTitle>
                 <DialogContent>
                     { history.length > 0 && history.map((item, index) => 
-                        <DialogContentText key={index}>{item.locationFrom.city.label} &gt; {item.locationTo.city.label}</DialogContentText>
+                        <DialogContentText key={index}>{item.date} : {item.locationFrom.city.label} &gt; {item.locationTo.city.label}</DialogContentText>
                     )}
 
                     { history.length < 1 &&
